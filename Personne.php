@@ -16,7 +16,10 @@ class Personne {
         $this->prenom=$prenom;
     }
 
-    public function personne(){
+
+
+
+    public function personne(){ //je récupère les infos de l'objet instancié de la class personne en cours et j'affiche ses infos
         echo "prénom: "                  .$this->prenom.
             "<br> nom: "                 .$this->nom.
             "<br> adresse: "             .$this->adresse.
@@ -25,25 +28,23 @@ class Personne {
 
     }
 
-    public function setAdresse($adresse)
+    public function setAdresse($adresse) // je permets de modifier l'adresse en la rentrant en tant que string paramètre
     {
         $this->adresse = $adresse;
     }
 
 
-    public function setNaissance($naissance)
+    public function setNaissance($naissance) // je permets de modifier la date de naissance en la rentrant en tant que string paramètre
     {
         $this->naissance = $naissance;
 
     }
 
-    public function age($naissance) {
+    public function age() {
 
+       $age = date('Y',strtotime ("now")) - date('Y',strtotime ($this->naissance));
 
-        $age = strtotime("now")-strtotime ($naissance);
-
-        echo strtotime($age);
-
+        echo $age;
     }
 
 
