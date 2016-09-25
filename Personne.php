@@ -42,9 +42,11 @@ class Personne {
 
     public function age() {
 
-       $age = date('Y',strtotime ("now")) - date('Y',strtotime ($this->naissance));
+       $age = date('Ym',strtotime ("now")) - date('Ym',strtotime ($this->naissance));
 
-        echo $age;
+
+
+        echo substr($age,0 , 2);
     }
 
 
